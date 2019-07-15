@@ -1,0 +1,22 @@
+blockquote {
+	background-color: #E0E0E0;
+	padding: 4px 15px;
+	border-left: solid 4px #FF0000;
+}
+
+article {
+	width: 90%;
+	margin: auto;
+	padding: 15px 0px;
+}
+
+header {
+	padding: 0% 2%;
+	border-bottom: 3px solid grey;
+}
+
+footer {
+	border-top: 3px solid grey;
+	padding: 1% 2%;
+}
+

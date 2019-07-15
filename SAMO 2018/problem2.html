@@ -1,62 +1,79 @@
-<html>
-	<head>
-		<title>The 2018 South African Mathematics Olympiad — Problem 2</title>
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({
-				extensions: ["tex2jax.js"],
-				jax: ["input/TeX", "output/HTML-CSS"],
-				tex2jax: {
-					inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
-					processEscapes: true
-				},
-				"HTML-CSS": { fonts: ["TeX"] }
-			});
-		</script>
-		<script type="text/javascript" async
-			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
-		</script>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The 2018 South African Mathematics Olympiad — Problem 2</title>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			extensions: ["tex2jax.js"],
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+				processEscapes: true
+			},
+			"HTML-CSS": { fonts: ["TeX"] }
+		});
+	</script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+	</script>
+	<link rel="stylesheet" href="../posts.css" />
+</head>
+<body>
+<header>
+<h1>The 2018 South African Mathematics Olympiad</h1>
+<h2>Problem 2</h2>
+<section id="mathemafrica-link">
+<p>This post can be read on <a href="http://www.mathemafrica.org/?p=15219">mathemafrica.org</a></p> 
+</section>
+</header>
+<article>
+<!-- Delete up to here when copying to mathemafrica -->
 
-	</head>
-	<body>
-		<h1>The 2018 South African Mathematics Olympiad — Problem 2</h1>
-		<!-- Delete up to here when copying to mathemafrica -->
+<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. In the week and half leading up the the contest, I plan to take a look at some of the problems from the senior paper in 2018, and have already written about the <a href="http://www.mathemafrica.org/?p=15210" target="_blank">first problem</a></p>
 
-		<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. In the week and half leading up the the contest, I plan to take a look at some of the problems from the senior paper in 2018, and have already written about the <a href="http://www.mathemafrica.org/?p=15210" target="_blank">first problem</a></p>
-		
-		<p>The second problem from the 2018 South African Mathematics Olympiad was</p>
-		<blockquote>
-			<p>In triangle $latex ABC$, $latex AB = AC$, and $latex D$ is on $latex BC$. A point $latex E$ is chosen on $latex AC$, and a point $latex F$ is chosen on $latex AB$, such that $latex DE = DC$ and $latex DF = DB$. It is given that $latex \frac{DC}{BD} = 2$ and $latex \frac{AF}{AE} = 5$. Determine the value of $latex \frac{AB}{BC}$.</p>
-		</blockquote>
-		
-		<p>The first step of solving any geometry problem should always be to draw a sketch. This helps you to understand how different parts of the figure relate to each other, and an accurate sketch may help you to form conjectures. Sometimes having a deliberately inaccurate sketch on hand is also helpful as it may help to avoid circular reasoning. For example, if three points in a sketch appear to be collinear, and you are trying to prove that this is in fact the case, then when working with an accurate sketch you may inadvertently assume that the points are collinear in your proof.</p>
+<p>The second problem from the 2018 South African Mathematics Olympiad was</p>
+<blockquote>
+	<p>In triangle $latex ABC$, $latex AB = AC$, and $latex D$ is on $latex BC$. A point $latex E$ is chosen on $latex AC$, and a point $latex F$ is chosen on $latex AB$, such that $latex DE = DC$ and $latex DF = DB$. It is given that $latex \frac{DC}{BD} = 2$ and $latex \frac{AF}{AE} = 5$. Determine the value of $latex \frac{AB}{BC}$.</p>
+</blockquote>
 
-		<p>Below I have included a sketch which is more accurate than it needs to be because when I was creating it, I already knew what all of the lengths in the problem work out to be.</p> 
-		<img src="problem2_sketch.png" width="80%" style="display: block; margin-left: auto; margin-right: auto;" alt="Diagram for Problem 2 showing triangle ABC with points D, E, and F marked, and the line segments DE, EF, and DF drawn." />
+<p>The first step of solving any geometry problem should always be to draw a sketch. This helps you to understand how different parts of the figure relate to each other, and an accurate sketch may help you to form conjectures. Sometimes having a deliberately inaccurate sketch on hand is also helpful as it may help to avoid circular reasoning. For example, if three points in a sketch appear to be collinear, and you are trying to prove that this is in fact the case, then when working with an accurate sketch you may inadvertently assume that the points are collinear in your proof.</p>
 
-		<p>To relate $latex AB$ to $latex BC$, it may help to relate these lengths to other lengths which we are given information about. For example, we know that $latex BC = 3 BD$, so if we could also relate $latex AB$ to $latex BD$, then we would be able to relate $latex AB$ to $latex BC$.</p>
+<p>Below I have included a sketch which is more accurate than it needs to be because when I was creating it, I already knew what all of the lengths in the problem work out to be.</p> 
+<img src="problem2_sketch.png" width="80%" style="display: block; margin-left: auto; margin-right: auto;" alt="Diagram for Problem 2 showing triangle ABC with points D, E, and F marked, and the line segments DE, EF, and DF drawn." />
 
-		<p>The key insight that allows us to relate $latex AB$ to $latex BD$ is to realise that the triangles $latex ABC$ and $latex DBF$ are similar. This is because triangle $latex DBF$ is isosceles, and so we have that $latex \angle BFD = \angle DBF = \angle ACB$, and so the two triangles have two pairs of corresponding angles equal. We are thus able to conclude that $latex \frac{AB}{BC} = \frac{BD}{BF}$.</p>
+<p>To relate $latex AB$ to $latex BC$, it may help to relate these lengths to other lengths which we are given information about. For example, we know that $latex BC = 3 BD$, so if we could also relate $latex AB$ to $latex BD$, then we would be able to relate $latex AB$ to $latex BC$.</p>
 
-		<p>We don't appear to be any closer to solving the problem, since we now have to figure out how $latex BF$ relates to $latex BD$, and this appears to be at least as difficult as the original problem. We do, however, know that $latex BF = AB - AF$, which we can use to our advantage because we have been given information about how $latex AF$ relates to other lengths in the figure. Specifically, we know the ratio of $latex AF$ to $latex AE$, and so it would be helpful to work with the length $latex AE$ in order to make further progress.</p>
+<p>The key insight that allows us to relate $latex AB$ to $latex BD$ is to realise that the triangles $latex ABC$ and $latex DBF$ are similar. This is because triangle $latex DBF$ is isosceles, and so we have that $latex \angle BFD = \angle DBF = \angle ACB$, and so the two triangles have two pairs of corresponding angles equal. We are thus able to conclude that $latex \frac{AB}{BC} = \frac{BD}{BF}$.</p>
 
-		<p>We were earlier able to relate the ratio $latex \frac{AB}{BC}$ to the length $latex AF$ by noting that triangles $latex ABC$ and $latex DBF$ are similar. We could do the same thing with triangles $latex ABC$ and $latex DCE$ to relate the ratio $latex \frac{AB}{AC}$ to the length $latex AE$ instead. Since we know the relationship between $latex AF$ and $latex AE$, we would then be able to set up an equation for $latex \frac{AB}{AC}$.</p>
+<p>We don't appear to be any closer to solving the problem, since we now have to figure out how $latex BF$ relates to $latex BD$, and this appears to be at least as difficult as the original problem. We do, however, know that $latex BF = AB - AF$, which we can use to our advantage because we have been given information about how $latex AF$ relates to other lengths in the figure. Specifically, we know the ratio of $latex AF$ to $latex AE$, and so it would be helpful to work with the length $latex AE$ in order to make further progress.</p>
 
-		<p>Using this approach, we obtain</p>
-		<p style="text-align: center;">$latex \displaystyle \frac{2BD}{AC - AE} = \frac{DC}{CE} = \frac{AB}{BC} = \frac{BD}{BF} = \frac{BD}{AB - AF}.$</p>
-		<p>From this we obtain that</p>
-		<p style="text-align: center;">$latex \displaystyle 2AC - 10AE = 2(AB - AF) = AC - AE$</p>
-		<p>and so we now know that $latex AC = 9AE$. This is not quite what we wanted. We hoped that the equation would allow us to determine $latex \frac{AB}{BC}$, but we have still obtained some valuable information.</p>
+<p>We were earlier able to relate the ratio $latex \frac{AB}{BC}$ to the length $latex AF$ by noting that triangles $latex ABC$ and $latex DBF$ are similar. We could do the same thing with triangles $latex ABC$ and $latex DCE$ to relate the ratio $latex \frac{AB}{AC}$ to the length $latex AE$ instead. Since we know the relationship between $latex AF$ and $latex AE$, we would then be able to set up an equation for $latex \frac{AB}{AC}$.</p>
 
-		<p>This unexpected piece of information is in fact enough to finish off the problem. We return to the relation</p>
-		<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{2BD}{AC - AE}$.</p>
-		<p>Since we know know what $latex AC - AE$ is as a fraction of $latex AC$, and we know what proportion of $latex BC$ the length $latex BD$ is equal to, we can rewrite</p>
-		<p style="text-align: center;">$latex \displaystyle \frac{2BD}{AC - AE}$</p>
-		<p>in terms of $latex AB$ and $latex BC$, and thus obtain an equation for $latex AB$ and $latex BC$ after all. Doing so gives us</p>
-		<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{\frac{2}{3} BC}{\frac{8}{9} AC}$</p>
-		<p>and so we obtain that</p>
-		<p style="text-align: center;">$latex \displaystyle {\left(\frac{AB}{BC}\right)}^2 = \frac{3}{4}$</p>
-		<p>which finally allows us to determine that</p>
-		<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{\sqrt{3}}{2}.$</p>
-		<!-- Delete from here onwards when copying to mathemafrica -->
-	</body>
+<p>Using this approach, we obtain</p>
+<p style="text-align: center;">$latex \displaystyle \frac{2BD}{AC - AE} = \frac{DC}{CE} = \frac{AB}{BC} = \frac{BD}{BF} = \frac{BD}{AB - AF}.$</p>
+<p>From this we obtain that</p>
+<p style="text-align: center;">$latex \displaystyle 2AC - 10AE = 2(AB - AF) = AC - AE$</p>
+<p>and so we now know that $latex AC = 9AE$. This is not quite what we wanted. We hoped that the equation would allow us to determine $latex \frac{AB}{BC}$, but we have still obtained some valuable information.</p>
+
+<p>This unexpected piece of information is in fact enough to finish off the problem. We return to the relation</p>
+<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{2BD}{AC - AE}$.</p>
+<p>Since we know know what $latex AC - AE$ is as a fraction of $latex AC$, and we know what proportion of $latex BC$ the length $latex BD$ is equal to, we can rewrite</p>
+<p style="text-align: center;">$latex \displaystyle \frac{2BD}{AC - AE}$</p>
+<p>in terms of $latex AB$ and $latex BC$, and thus obtain an equation for $latex AB$ and $latex BC$ after all. Doing so gives us</p>
+<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{\frac{2}{3} BC}{\frac{8}{9} AC}$</p>
+<p>and so we obtain that</p>
+<p style="text-align: center;">$latex \displaystyle {\left(\frac{AB}{BC}\right)}^2 = \frac{3}{4}$</p>
+<p>which finally allows us to determine that</p>
+<p style="text-align: center;">$latex \displaystyle \frac{AB}{BC} = \frac{\sqrt{3}}{2}.$</p>
+
+<!-- Delete from here onwards when copying to mathemafrica -->
+</article>
+<footer>
+<nav>
+	Return to <a href="../index.html">list of blog posts</a>
+</nav>
+</footer>
+</body>
 </html>
