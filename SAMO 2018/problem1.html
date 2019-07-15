@@ -2,55 +2,82 @@
 <!-- Categories: Competition -->
 <!-- Tags: SAMO, diophantine equaations, contest -->
 
-The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. In the two weeks leading up to the contest, I plan to take a look at some of the problems from the senior paper from 2018.
+<html>
+	<head>
+		<title>The 2018 South African Mathematics Olympiad — Problem 1</title>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				extensions: ["tex2jax.js"],
+				jax: ["input/TeX", "output/HTML-CSS"],
+				tex2jax: {
+					inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+					processEscapes: true
+				},
+				"HTML-CSS": { fonts: ["TeX"] }
+			});
+		</script>
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+		</script>
 
-The first problem from the 2018 South African Mathematics Olympiad was
-<blockquote>
-One hundred empty glasses are arranged in a $latex 10 \times 10$ array. Now we pick $latex a$ of the rows and pour blue liquid into all glasses in these rows, so that they are half full. The remaining rows are filled halfway with yellow liquid. Afterwards, we pick $latex b$ of the columns and fill them up with blue liquid. The remaining columns are filled with yellow liquid. The mixture of blue and yellow liquid turns green. If both halves have the same colour, then that colour remains as is.
-<ol>
-	<li>Determine all possible combinations of values for $latex a$ and $latex b$ so that exactly half of the glasses contain green liquid at the end.</li>
-	<li>Is it possible that precisely one quarter of the glasses contain green liquid at the end?</li>
-</ol>
-</blockquote>
+	</head>
+	<body>
+		<h1>The 2018 South African Mathematics Olympiad — Problem 1</h1>
+		<!-- Delete up to here when copying to mathemafrica -->
 
-In order to find under what conditions half of the glasses contain green liquid at the end, it would be very helpful to know how many glasses (in terms of $latex a$ and $latex b$) contain green liquid, so that we can set up an equation to solve for $latex a$ and $latex b$.
+		<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. In the two weeks leading up to the contest, I plan to take a look at some of the problems from the senior paper from 2018.</p>
 
-We note that glasses containing green liquid occur at the intersection of a blue row and a yellow column, or at the intersection of a yellow row and a blue column. To calculate the number of glasses at the intersection of a blue row and a yellow column, we note that there are $latex a$ options for which row the glass is in, and $latex 10 - b$ options for which column it is in. There are thus $latex a(10 - b)$ such glasses. Similarly, there are $latex b(10 - a)$ glasses at the intersection of a yellow row and a blue column. Since a glass must be in either a yellow row or a blue row, and can not be in both, we see that this accounts for each of the green glasses exactly once. There are thus $latex a(10 - b) + b(10 - a)$ glasses of green liquid in total.
+		<p>The first problem from the 2018 South African Mathematics Olympiad was</p>
+		<blockquote>
+			<p>One hundred empty glasses are arranged in a $latex 10 \times 10$ array. Now we pick $latex a$ of the rows and pour blue liquid into all glasses in these rows, so that they are half full. The remaining rows are filled halfway with yellow liquid. Afterwards, we pick $latex b$ of the columns and fill them up with blue liquid. The remaining columns are filled with yellow liquid. The mixture of blue and yellow liquid turns green. If both halves have the same colour, then that colour remains as is.</p>
+		<ol>
+			<li>Determine all possible combinations of values for $latex a$ and $latex b$ so that exactly half of the glasses contain green liquid at the end.</li>
+			<li>Is it possible that precisely one quarter of the glasses contain green liquid at the end?</li>
+		</ol>
+		</blockquote>
 
-We see that to determine the combinations of $latex a$ and $latex b$ such that exactly half of the glasses contain green liquid, we want to solve the equation
-<p style="text-align: center;">$latex \displaystyle a(10 - b) + b(10 - a) = 50.$</p> 
-This can be manipulated to become
-<p style="text-align: center;">$latex \displaystyle (a - 5)(b - 5) = 0$</p>
-and so we see that exactly half of the glasses contain green liquid if and only if either $latex a = 5$, or $latex b = 5$!
+		<p>In order to find under what conditions half of the glasses contain green liquid at the end, it would be very helpful to know how many glasses (in terms of $latex a$ and $latex b$) contain green liquid, so that we can set up an equation to solve for $latex a$ and $latex b$.</p>
 
-Does this make sense? Is filling half of the rows (or columns) with blue liquid really enough to ensure that half of the glasses will contain green liquid? Suppose that half of the rows are filled with blue liquid. For each column, we note that if the column is filled with blue liquid, then a glass in that column will be green at the end precisely when it lies in a yellow row. By assumption, this is true for half of the rows, and so half of this column will end up green. Similarly, if the column is filled with yellow liquid, then it is in precisely the $latex 5$ rows in which we find blue liquid that there will be a green glass at the end. Again we see that half of the column will end up green. Since half of every column turns out to be green, exactly half of the glasses will be green.
+		<p>We note that glasses containing green liquid occur at the intersection of a blue row and a yellow column, or at the intersection of a yellow row and a blue column. To calculate the number of glasses at the intersection of a blue row and a yellow column, we note that there are $latex a$ options for which row the glass is in, and $latex 10 - b$ options for which column it is in. There are thus $latex a(10 - b)$ such glasses. Similarly, there are $latex b(10 - a)$ glasses at the intersection of a yellow row and a blue column. Since a glass must be in either a yellow row or a blue row, and can not be in both, we see that this accounts for each of the green glasses exactly once. There are thus $latex a(10 - b) + b(10 - a)$ glasses of green liquid in total.</p>
 
-Let us consider the second question that was posed. Is it possible that exactly one quarter of the glasses contain green liquid at the end? In this case, we want to solve the equation
-<p style="text-align: center;">$latex \displaystyle a(10 - b) + b(10 - a) = 25$</p>
-which simplifies to
-<p style="text-align: center;">$latex \displaystyle 10a + 10b - 2ab = 25.$</p>
-This has no solutions in whole numbers, because for whole number values of $latex a$ and $latex b$, the left hand side of the equation will always be even, but $latex 25$ is an odd number.
+		<p>We see that to determine the combinations of $latex a$ and $latex b$ such that exactly half of the glasses contain green liquid, we want to solve the equation</p>
+		<p style="text-align: center;">$latex \displaystyle a(10 - b) + b(10 - a) = 50.$</p> 
+		<p>This can be manipulated to become</p>
+		<p style="text-align: center;">$latex \displaystyle (a - 5)(b - 5) = 0$</p>
+		<p>and so we see that exactly half of the glasses contain green liquid if and only if either $latex a = 5$, or $latex b = 5$!</p>
 
-The reader may be interested to know that there is in fact a general method to solve equations of the type
-<p style="text-align: center;">$latex \displaystyle axy + bx + cy = d$</p>
-for given values $latex a, b, c, d$, and where we wish to find integer values for $latex x$ and $latex y$.
+		<p>Does this make sense? Is filling half of the rows (or columns) with blue liquid really enough to ensure that half of the glasses will contain green liquid? Suppose that half of the rows are filled with blue liquid. For each column, we note that if the column is filled with blue liquid, then a glass in that column will be green at the end precisely when it lies in a yellow row. By assumption, this is true for half of the rows, and so half of this column will end up green. Similarly, if the column is filled with yellow liquid, then it is in precisely the $latex 5$ rows in which we find blue liquid that there will be a green glass at the end. Again we see that half of the column will end up green. Since half of every column turns out to be green, exactly half of the glasses will be green.</p>
 
-As we did for the first part of the SAMO problem, the general approach is to try to factorise the given expression in the form
-<p style="text-align: center;">$latex \displaystyle (px + q)(ry + t) = n.$</p>
-If we're lucky, $latex n$ turns out to be $latex 0$, and we can conclude that the only solutions are those where $latex x = -q/p$, or $latex y = -t/r$. 
+		<p>Let us consider the second question that was posed. Is it possible that exactly one quarter of the glasses contain green liquid at the end? In this case, we want to solve the equation</p>
+		<p style="text-align: center;">$latex \displaystyle a(10 - b) + b(10 - a) = 25$</p>
+		<p>which simplifies to</p>
+		<p style="text-align: center;">$latex \displaystyle 10a + 10b - 2ab = 25.$</p>
+		<p>This has no solutions in whole numbers, because for whole number values of $latex a$ and $latex b$, the left hand side of the equation will always be even, but $latex 25$ is an odd number.</p>
 
-The case where $latex n \neq 0$ does not actually pose a problem, however. We did not see it arise when looking at the SAMO problem, but it is far more common. In this case, we know that each of the terms on the left hand side of the equation must be factors of $latex n$. The integer $latex n$ only has finitely many factors, and so we can find all solutions by setting $latex (px + q)$ to be equal to each one of these factors in turn. We find that all solutions in this case are given by
-<p style="text-align: center;">$latex \displaystyle x = \frac{d - q}{p} \quad \text{and} \quad  y = \frac{n - dt}{dr}$</p>
-where $latex d$ is one of the finitely many divisors of $latex n$.
+		<p>The reader may be interested to know that there is in fact a general method to solve equations of the type</p>
+		<p style="text-align: center;">$latex \displaystyle axy + bx + cy = d$</p>
+		<p>for given values $latex a, b, c, d$, and where we wish to find integer values for $latex x$ and $latex y$.</p>
 
-Is it always possible to find a factorisation of the desired form? Yes, we can check that the given equation is in fact equivalent to
-<p style="text-align: center;">$latex \displaystyle (ax + c)(ay + b) = ad + bc.$</p>
-At this point, we can note that if $latex \gcd(a, b) \gcd(a, c)$ does not divide $latex ad + bc$, then the equation has no integer solutions. (I leave it to the reader to explain why $latex \gcd(a, c)$ is always a divisor of $latex ad + bc$. This is why we consider the product of both of the $latex \gcd$'s.) If we had applied this method to the second part of the SAMO problem, the factorised version of the equation would have been
-<p style="text-align: center;">$latex \displaystyle (-2a + 10)(-2b + 10) = 50.$</p>
-Since $latex 4$ is not a divisor of $latex 50$, we again see that there are no solutions. The reader is cautioned, however, that there may be other obstacles to the existence of a solution. Even if $latex \gcd(a, b) \gcd(a, c)$ is a divisor of $latex ad + bc$, not all factors of $latex n = ad + bc$ will yield integer solutions when applying the above method.
+		<p>As we did for the first part of the SAMO problem, the general approach is to try to factorise the given expression in the form</p>
+		<p style="text-align: center;">$latex \displaystyle (px + q)(ry + t) = n.$</p>
+		<p>If we're lucky, $latex n$ turns out to be $latex 0$, and we can conclude that the only solutions are those where $latex x = -q/p$, or $latex y = -t/r$.</p>
 
-If the reader would like to put this method into practice, it can be applied to the first problem from the 2018 Putnam Mathematics Competition:
-<blockquote>
-	Find all ordered pairs $latex (a, b)$ of positive integers for which
-	<p style="text-align: center;">$latex \displaystyle \frac{1}{a} + \frac{1}{b} = \frac{3}{2018}.$</p>
-</blockquote>
+		<p>The case where $latex n \neq 0$ does not actually pose a problem, however. We did not see it arise when looking at the SAMO problem, but it is far more common. In this case, we know that each of the terms on the left hand side of the equation must be factors of $latex n$. The integer $latex n$ only has finitely many factors, and so we can find all solutions by setting $latex (px + q)$ to be equal to each one of these factors in turn. We find that all solutions in this case are given by</p>
+		<p style="text-align: center;">$latex \displaystyle x = \frac{d - q}{p} \quad \text{and} \quad  y = \frac{n - dt}{dr}$</p>
+		<p>where $latex d$ is one of the finitely many divisors of $latex n$.</p>
+
+		<p>Is it always possible to find a factorisation of the desired form? Yes, we can check that the given equation is in fact equivalent to</p>
+		<p style="text-align: center;">$latex \displaystyle (ax + c)(ay + b) = ad + bc.$</p>
+		<p>At this point, we can note that if $latex \gcd(a, b) \gcd(a, c)$ does not divide $latex ad + bc$, then the equation has no integer solutions. (I leave it to the reader to explain why $latex \gcd(a, c)$ is always a divisor of $latex ad + bc$. This is why we consider the product of both of the $latex \gcd$'s.) If we had applied this method to the second part of the SAMO problem, the factorised version of the equation would have been</p>
+		<p style="text-align: center;">$latex \displaystyle (-2a + 10)(-2b + 10) = 50.$</p>
+		<p>Since $latex 4$ is not a divisor of $latex 50$, we again see that there are no solutions. The reader is cautioned, however, that there may be other obstacles to the existence of a solution. Even if $latex \gcd(a, b) \gcd(a, c)$ is a divisor of $latex ad + bc$, not all factors of $latex n = ad + bc$ will yield integer solutions when applying the above method.</p>
+
+		<p>If the reader would like to put this method into practice, it can be applied to the first problem from the 2018 Putnam Mathematics Competition:</p>
+		<blockquote>
+			<p>Find all ordered pairs $latex (a, b)$ of positive integers for which</p>
+			<p style="text-align: center;">$latex \displaystyle \frac{1}{a} + \frac{1}{b} = \frac{3}{2018}.$</p>
+		</blockquote>
+		
+		<!-- Delete from here onwards when copying to mathemafrica -->
+	</body>
+</html>
