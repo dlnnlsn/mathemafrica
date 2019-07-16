@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 2018 South African Mathematics Olympiad — Problem 3</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+  </script>
+  <link rel="stylesheet" href="../posts.css" />
+</head>
+<body>
+
+<header>
+<h1>The 2018 South African Mathematics Olympiad</h1>
+<h2>Problem 3</h2>
+<p>This post can be read on <a href="http://www.mathemafrica.org/">mathemafrica.org</a></p> 
+</header>
+
+<article>
+<!-- Delete up to here when copying to mathemafrica -->
+
+<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. In the week leading up to the contest, I plan to take a look at some of the problems from the senior paper from 2018. A list of all the posts can be found <a href="http://www.mathemafrica.org/?p=15215" target="_blank">here</a>.</p> 
+
+<p>Today we will look at the third problem from the 2018 South African Mathematics Olympiad:</p>
+<blockquote>
+  <p>Determine the smallest positive integer $latex n$ whose prime factors are all greater than $latex 18$, and that can be expressed as $latex n = a^3 + b^3$ with positive integers $latex a$ and $latex b$.</p> 
+</blockquote>
+
+<p>In many number theory problems, it helps to consider the prime factors of the numbers involved, and in this problem we are in fact forced to do so because the question itself is about the prime factors of a number. When dealing with factors of a number or an expression representing some number, it of course helps to consider whether we can factorise the given expression.</p>
+
+<p>We recall (or learn for the first time) the factorisation $latex a^3 + b^3 = (a + b)(a^2 - ab + b^2)$. Since all of the prime factors of $latex n$ are greater than $latex 18$, the same is true for the prime factors of $latex a + b$ and $latex a^2 - ab + b^2$.</p>
+
+<p>For $latex n$ to be small, $latex a$ and $latex b$, and hence $latex a + b$, should be reasonably small. We are led to consider solutions where $latex a + b$ is as small as possible. We do need to be careful, however. It is not automatically true that the value of $latex n$ that we find when considering the smallest possible value of $latex a + b$ is necessarily the smallest possible value of $latex n$. Considering the smallest possible value of $latex a + b$ might be a valuable starting point, but we would need to do more work to establish that the value that we find is the true minimum. It is not true that larger values of $latex a + b$ correspond to larger values of $latex a^3 + b^3$ in general. For example, we have that $latex 1^3 + 4^3 &gt; 3^3 + 3^3$ <em>even though</em> $latex 1 + 4 &lt; 3 + 3$.</p>
+
+<p>Ignoring for now the problem of finding the optimal value of $latex a + b$ (we have seen above that it is not necessarily the smallest possible value of $latex a + b$), how would we go about finding the smallest value of $latex a^3 + b^3$ if we have already chosen a fixed value for $latex a + b$?</p>
+
+<p>Experience with inequalities, or some experimentation, leads one to speculate that for a given value of $latex a + b$, the minimum value of $latex a^3 + b^3$ will occur when $latex a$ and $latex b$ are equal, and that the value of $latex a^3 + b^3$ increases as $latex a$ and $latex b$ move further apart. This can be proven by showing that</p>
+<p style="text-align: center;">$latex \displaystyle f(x) = {\left(\frac{a + b}{2} - x\right)}^3 + {\left(\frac{a + b}{2} + x\right)}^3$</p>
+<p>is an increasing function of $latex x$ for non-negative values of $latex x$. In fact, we have that</p>
+<p style="text-align: center;">$latex \displaystyle f(x) = \frac{{(a + b)}^3}{4} + 3(a + b) x^2$</p>
+<p>which is a parabola with a turning point at $latex x = 0$. It is clear that as $latex x$ increases, so does the value of $latex f(x)$.</p>
+
+<p>Another way of establishing the same result would be to show that if $latex x$ and $latex y$ are positive integers, then $latex {(x - 1)}^3 + {(y + 1)}^3 &gt; x^3 + y^3$. The reader is invited to fill in the details for this approach.</p>
+
+<p>We know that $latex a + b$ does not have any prime factors smaller than $latex 18$, and so $latex a + b$ must be larger than $latex 18$. The smallest value that we need to consider is then $latex a + b = 19$. In this case, we know that $latex a^3 + b^3$ is minimised when $latex a = 9$ and $latex b = 10$. (Remember that $latex a$ and $latex b$ must be integers, so the expression is minimised when these are the closest integers to $latex \frac{19}{2}$.) For these values, we find that</p>
+<p style="text-align: center;">$latex \displaystyle a^3 + b^3 = 19 (9^2 - 9 \times 10 + 10^2) = 19 \times 91 = 7 \times 13 \times 19.$</p>
+<p>This has prime factors which are smaller than $latex 18$, and so is not a valid solution. The next smallest value of $latex a^3 + b^3$ occurs when $latex a = 8$ and $latex b = 11$. In this case we have that</p>
+<p style="text-align: center;">$latex \displaystyle a^3 + b^3 = 19 \times (8^2 - 8 \times 11 + 11^2) = 19 \times 97.$</p>
+<p>This number indeed has no prime factors smaller than $latex 18$, and so is a candidate for the smallest value of $latex n$ that solves the problem. We need only verify that it is not possible to find a smaller value of $latex n$ by considering a larger value of $latex a + b$.</p>
+
+<p>We saw earlier that the smallest possible value of $latex a^3 + b^3$ for some fixed value of $latex a + b$ is equal to</p>
+<p style="text-align: center;">$latex \displaystyle \frac{{(a + b)}^3}{4}.$</p>
+<p>Perhaps it is the case that for larger values of $latex a + b$, this minimum value of $latex a^3 + b^3$ is already larger than $latex 19 \times 97 = 1843$. We note that the next smallest possible value for $latex a + b$ is $latex 23$. (All the numbers between $latex 19$ and $latex 23$ have prime factors which are smaller than $latex 18$.) We see that if $latex a + b \neq 19$, and $latex a + b$ has no prime factors smaller than $latex 18$, then</p>
+<p style="text-align: center;">$latex \displaystyle a^3 + b^3 \geq \frac{{(a + b)}^3}{4} \geq \frac{23^3}{4} = 3041.75.$</p>
+<p>This is indeed larger than $latex 1843$, and so it is not possible to find a smaller value for $latex n$ by considering a larger value for $latex a + b$. The smallest $latex n$ satisfying the conditions of the problem is thus $latex 1843 = 863 + 11^3$.</p>
+
+<!-- Delete from here onwards when copying to mathemafrica -->
+</article>
+
+<footer>
+<nav>
+  Return to <a href="../index.html">list of blog posts</a>
+</nav>
+</footer>
+
+</body>
+</html>
