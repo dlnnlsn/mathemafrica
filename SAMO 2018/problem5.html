@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 2018 South African Mathematics Olympiad — Problem 5</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+        processEscapes: true
+      },
+      TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"]
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+  </script>
+  <link rel="stylesheet" href="../posts.css" />
+</head>
+<body>
+
+<header>
+<h1>The 2018 South African Mathematics Olympiad</h1>
+<h2>Problem 5</h2>
+<p>This post can be read on <a href="http://www.mathemafrica.org/?p=15351">mathemafrica.org</a></p>
+</header>
+
+<article>
+<!-- Delete up to here when copying to mathemafrica -->
+
+<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. I have been writing about some of the problems from the senior paper from 2018. A list of all of the problems can be found <a href="http://www.mathemafrica.org/?p=15215" target="_blank">here</a>.</p>
+
+<p>Today we will look at the fifth problem from the 2018 South African Mathematics Olympiad:<p>
+<blockquote>
+  <p>Determine all sequences $latex a_1, a_2, a_3, \ldots$ of nonnegative integers such that $latex a_1 &lt; a_2 &lt; a_3 &lt; \ldots$, and $latex a_n$ divides $latex a_{n - 1} + n$ for all $latex n \geq 2$.</p>
+</blockquote>
+
+<p>Since the sequence $latex a_1, a_2, \ldots$ is strictly increasing, we know that $latex a_n \geq n - 1$ for all positive integers $latex n$. (We could prove this rigorously by induction.) This means that $latex a_{n - 1} + n \leq (a_n - 1) + (a_n + 1) = 2a_n$ for all $latex n$, and so we know that $latex a_{n - 1} + n$ is equal to either $latex a_n$, or to $latex 2a_n$ for all positive integers $latex n$. Perhaps we should try to figure out exactly when it is equal to $latex a_n$, and when it is equal to $latex 2a_n$. If we knew, for example, that we always have that $latex a_{n - 1} + n = a_n$, then we have reduced the problem to solving this recurrence relation.</p>
+
+<p>So when is it possible that $latex a_{n - 1} + n = 2a_n$? Looking at our derivation above, we see that $latex a_{n - 1} + n$ is always <em>strictly smaller</em> than $latex 2a_n$ <em>unless</em> both $latex a_{n - 1} = a_n - 1$ and $latex a_n = n - 1$. i.e. We must have equality in each of the two inequalities that we used.</p>
+
+<p>We see that if there is some positive integer $latex k$ such that $latex a_{k - 1} + k = 2a_k$, then we must have that $latex a_k = k - 1$, and so, since the sequence is strictly increasing, we have that $latex a_n = n - 1$ for all $latex n \leq k$. The sequence thus has some initial segment where $latex a_n = n - 1$, and then possibly switches to a sequence where $latex a_{n - 1} + n = a_n$. In fact, it is possible that this switch never occurs. We could have that $latex a_n = n - 1$ for all positive integers $latex n$. This is in fact a solution to the problem. We verify that if $latex a_n = n - 1$ for all positive integers $latex n$, then $latex a_{n - 1} + n = 2n - 2 = 2a_n$ for all $latex n$.</p>
+
+<p>We now turn our attention to finding all of the possible sequences where either there is <em>no</em> positive integer $latex n$ such that $latex a_n = n - 1$, or where there is some positive integer $latex k$ such that $latex a_k \geq k$, but $latex a_n = n - 1$ for all $latex n &lt; k$.</p>
+
+<p>Suppose that there are no positive integers $latex n$ such that $latex a_n = n - 1$. We then have that $latex a_n = a_{n - 1} + n$ for all positive integers $latex n$. This implies that</p>
+<p style="text-align: center;">$latex \displaystyle a_n = a_{n - 1} + n = a_{n - 2} + (n - 1) + n = \cdots = a_1 + 2 + 3 + \cdots + n$</p>
+<p>for all positive integers $latex n$. We recall, or learn, that the sum of the first $latex n$ positive integers is $latex \frac{n(n + 1)}{2}$, and so we find that<p>
+<p style="text-align: center;">$latex \displaystyle a_n = a_1 - 1 + \frac{n(n + 1)}{2} = a_1 + \frac{(n + 2)(n - 1)}{2}$</p>
+<p>for all positive integers $latex n$. To be more rigorous, we could prove this using the principle of mathematical induction. By construction, this satisfies $latex a_n = a_{n - 1} + n$ for all $latex n \geq 2$, and so this is a valid solution to the problem for all values of $latex a_1$.</p>
+
+<p>Finally, what sequences arise if there is some positive integer $latex k$ such that $latex a_k \geq k$, but $latex a_n = n - 1$ for all $latex n &lt; k$? Since $latex a_k \geq k$ and the sequence is strictly increasing, we have that $latex a_n \geq n$ for all positive integers $latex n \geq k$. We thus have that $latex a_n = a_{n - 1} + n$ for all $latex n &gt; k$, and so we find using a similar argument to before that</p>
+<p style="text-align: center;">$latex \displaystyle a_n = a_k + (k + 1) + (k + 2) + \cdots + n = a_k + \frac{n(n + 1)}{2} - \frac{k(k + 1)}{2}$</p>
+<p>for all positive integers $latex n \geq k$.</p>
+
+<p>Thus we potentially have a solution where for some positive integer $latex k$, we have that $latex a_n = n - 1$ for $latex n &lt; k$, and $latex a_n = a_k + \frac{1}{2} n(n + 1) - \frac{1}{2} k(k + 1)$ for $latex n \geq k$. The conditions of the problem are clearly satisfied for $latex n &lt; k$, since for these values of $latex n$ we have that $latex a_{n - 1} + n = 2a_n$, and by construction, we have that $latex a_{n} = a_{n - 1} + n$ for all $latex n &gt; k$. Thus the only requirement that needs to be satisfied for this to be a valid solution is that $latex a_k$ divides $latex a_{k - 1} + k$. We thus require that $latex a_k$ divides $latex 2k - 2$. Since we have that $latex a_k \geq k$, we must in fact have that $latex a_k = 2k - 2$. (We have that $latex 2a_k \geq 2k &gt; 2k - 2$, and so the multiple of $latex a_k$ that $latex 2k - 2$ is equal to must be $latex a_k$ itself.)<p>
+
+<p>In summary, we found that all sequences that satisfy the conditions in the problem are given by</p>
+<ul>
+  <li style="margin:8px 0px;;">$latex a_n = n - 1$ for all positive integers $latex n$; or</li>
+  <li style="margin:8px 0px;">$latex \displaystyle a_n = a_1 + \frac{(n + 2)(n - 1)}{2}$ for all positive integers $latex n$, where the value of $latex a_1$ can be chosen arbitrarily; or</li>
+  <li style="margin:8px 0px;">There is some positive integer $latex k$ such that $latex a_n = n - 1$ for $latex n &lt; k$, and $latex \displaystyle a_n = \frac{n(n + 1)}{2} - \frac{k(k + 1)}{2} + 2k - 2$ for all $latex n \geq k$.</li>
+</ul>
+
+<!-- Delete from here onwards when copying to mathemafrica -->
+</article>
+
+<footer>
+<nav>
+  Return to <a href="../index.html">list of blog posts</a>
+</nav>
+</footer>
+
+</body>
+</html>
