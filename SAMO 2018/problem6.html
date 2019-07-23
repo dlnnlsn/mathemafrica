@@ -59,17 +59,17 @@
 <p>The first thing that we should notice about this problem is that the order in which we perform the operations is largely irrelevant. A number will remain at the end if and only if it appears an odd number of times in the table. The only thing that the order of deletions can affect is the positions of the numbers at the end, but it can not affect how many of them there are.</p>
 
 <p>In this problem, by far the simplest case is when $latex n = 1$ and $latex x_1 = 1$. In this case, our table is simply</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">3</td>
     </tr>
   </tbody>
 </table>
@@ -82,49 +82,49 @@
 <p>This is already a valuable piece of insight. We have already identified one of the three numbers that will always remain. Perhaps we can try to generalise what sorts of numbers will always remain. In this case, $latex 1$ happens to also be the smallest number in the table, and so this is an example of the extremal principle. The smallest number in the table must appear in the first column, and since the $latex x_i$ are unique, the smallest number can only appear once. A similar argument shows that the largest number in the table must remain at the end because it can only appear in the third column. We could generalise this argument even further: <em>any</em> number which can only appear in one of the three columns must only appear in the table only once.</p>
 
 <p>With this insight stored securely in our arsenal, let us continue trying to build larger examples where only three numbers remain. The next candidate for a number to duplicate is the number $latex2$. This already appears in the second column, and can not appear in the third column, and so let's make $latex x_2 = 2$ so that it appears in the first column. Now our table looks as follows:<p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td>3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td>4</td>
-      <td>6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">6</td>
     </tr>
   </tbody>
 </table>
 <p>where black cells indicate numbers which have been removed because they are duplicates.</p>
 
 <p>Duplicating the $latex 3$ will also get rid of the $latex 6$ which we have now created. We could try to remove other numbers, but in each of the other cases, we would remove one number but gain two. Setting $latex x_3 = 3$ gives us</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td>4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td>9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">9</td>
     </tr>
   </tbody>
 </table>
@@ -132,211 +132,211 @@
 <p>This gives us our second example of a table with exactly three numbers remaining. We note that the fact that there is one number remaining in each column lends support to our earlier idea that a number which can only appear in one of the columns must only appear once in the table. We should try to identify what property of the numbers $latex 1, 4$, and $latex 9$ ensure that they only appear in one column. We already know that $latex 1$ and $latex 9$ remain because they are the smallest and largest numbers, respectively, but what is special about $latex 4$? We carry on.</p>
 
 <p>If we duplicate the number $latex 4$, we obtain the table<p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td class="strike">4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td>9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">9</td>
     </tr>
     <tr>
-      <td class="strike">4</td>
-      <td>8</td>
-      <td>12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">12</td>
     </tr>
   </tbody>
 </table>
 
 <p>Working with the hypothesis that we only want one number to remain in each column, we should now try to remove the $latex 9$ or the $latex 12$. We also know that it is the largest number in the table that will remain in the third column, and since there are already numbers larger than $latex 9$ in the table, we should remove the $latex 9$. Placing $latex 9$ in the first column thus gives us</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td class="strike">4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td class="strike">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
     </tr>
     <tr>
-      <td class="strike">4</td>
-      <td>8</td>
-      <td>12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">12</td>
     </tr>
     <tr>
-      <td class="strike">9</td>
-      <td>18</td>
-      <td>27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">18</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">27</td>
     </tr>
   </tbody>
 </table>
 
 <p>The exact same argument now tells us that we should remove the $latex 12$. There are two ways in which this could be accomplished: we could place a $latex 6$ in the first column so that $latex 12$ appears in the second column, or we could place a $latex 12$ in the first column. I will save us from the trial and error that would ensue at this point by pointing out that a $latex 6$ placed in the first column could never be removed because then there is already a $latex 6$ in all three of the columns. We thus want to place a $latex 12$ in the first column. This gives us</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td class="strike">4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td class="strike">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
     </tr>
     <tr>
-      <td class="strike">4</td>
-      <td>8</td>
-      <td class="strike">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
     </tr>
     <tr>
-      <td class="strike">9</td>
-      <td>18</td>
-      <td>27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">18</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">27</td>
     </tr>
     <tr>
-      <td class="strike">12</td>
-      <td>24</td>
-      <td>36</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">24</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">36</td>
     </tr>
   </tbody>
 </table>
 
 <p>A similar argument to before tells us that we should remove the $latex 27$, which can only be done by adding a $latex 27$ in the first column.</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td class="strike">4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td class="strike">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
     </tr>
     <tr>
-      <td class="strike">4</td>
-      <td>8</td>
-      <td class="strike">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
     </tr>
     <tr>
-      <td class="strike">9</td>
-      <td>18</td>
-      <td class="strike">27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">18</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">27</td>
     </tr>
     <tr>
-      <td class="strike">12</td>
-      <td>24</td>
-      <td>36</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">24</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">36</td>
     </tr>
     <tr>
-      <td class="strike">27</td>
-      <td>54</td>
-      <td>81</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">54</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">81</td>
     </tr>
   </tbody>
 </table>
 
 <p>We could get rid of the $latex 18, 36$, and $latex 54$ in one fell swoop by placing a $latex 18$ in the first column. We then have to delete either the $latex 8$ or the $latex 24$ in the second column. Alternatively, we could delete both by placing a $latex 8$ in the first column. This turns out to be a better idea, because we then have...</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <th>$latex x_k$</th>
-    <th>$latex 2x_k$</th>
-    <th>$latex 3x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
+    <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3x_k$</th>
   </tr>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="strike">2</td>
-      <td class="strike">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">1</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
     </tr>
     <tr>
-      <td class="strike">2</td>
-      <td class="strike">4</td>
-      <td class="strike">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">2</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
     </tr>
     <tr>
-      <td class="strike">3</td>
-      <td class="strike">6</td>
-      <td class="strike">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">3</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">6</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
     </tr>
     <tr>
-      <td class="strike">4</td>
-      <td class="strike">8</td>
-      <td class="strike">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">4</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
     </tr>
     <tr>
-      <td class="strike">9</td>
-      <td class="strike">18</td>
-      <td class="strike">27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">9</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">18</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">27</td>
     </tr>
     <tr>
-      <td class="strike">12</td>
-      <td class="strike">24</td>
-      <td class="strike">36</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">12</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">24</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">36</td>
     </tr>
     <tr>
-      <td class="strike">27</td>
-      <td class="strike">54</td>
-      <td>81</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">27</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">54</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">81</td>
     </tr>
     <tr>
-      <td class="strike">18</td>
-      <td class="strike">36</td>
-      <td class="strike">54</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">18</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">36</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">54</td>
     </tr>
     <tr>
-      <td class="strike">8</td>
-      <td>16</td>
-      <td class="strike">24</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">8</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px;">16</td>
+      <td style="border: 1px solid black; text-align: center; padding: 5px; background-color: black; color: white;">24</td>
     </tr>
   </tbody>
 </table>
@@ -361,40 +361,40 @@
 <p>Suppose that we have a sequence $latex x_1, x_2, \dots, x_n$ such that the numbers $latex 2^a$, and $latex 3^b$ remain in the table at the end of our procedure. How could we create a table where a larger power of $latex 2$ remains at the end? We could just take the current table and add a row starting with $latex 2^a$. To get a larger power of $latex 3$, we could add a row starting with $latex 3^b$. We could then try to add more rows to this table to try to get rid of the numbers that we don't want. In doing so, we may realise that the sequence of deletions that we perform are very similar to the ones we performed when constructing our starting table in the first place, or we might not. We could try to find a solution this way, but the problem becomes much easier if we instead embrace our previous insight right from the onset.</p>
 
 <p>If we were to multiply each of the $latex x_i$ by $latex 2^s$, for some $latex s$, then we know that we would obtain a table where the numbers that remain are $latex 2^s, 2^{a + s}$, and $latex 2^s \cdot 3^b$. Similarly, if we were to multiply each of the entries by $latex 3^t$ instead, then we would obtain a table where the entries that remain are $latex 3^t, 2^a \cdot 3^t$, and $latex 3^{b + t}$. Thus if we combine all three of the tables, we have one large table, three times the size of the original, where there is some sequence of operations that can be performed such that nine numbers remain:</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <td>$latex 1$</td>
-    <td>$latex 2^a$</td>
-    <td>$latex 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 1$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^b$</td>
   </tr>
   <tr>
-    <td>$latex 2^s$</td>
-    <td>$latex 2^{a + s}$</td>
-    <td>$latex 2^s \cdot 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^s$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^{a + s}$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^s \cdot 3^b$</td>
   </tr>
   <tr>
-    <td>$latex 3^t$</td>
-    <td>$latex 2^a \cdot 3^t$</td>
-    <td>$latex 3^{b + t}$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^t$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a \cdot 3^t$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^{b + t}$</td>
   </tr>
 </table>
 
 <p>We would like for only three numbers to remain, so perhaps we can choose $latex s$ and $latex t$ such that some of these numbers are equal, and hence can be deleted. We note that the only number which can be equal to $latex 2^s \cdot 3^b$ is $latex 2^a \cdot 3^t$. Thus we could at least remove these two numbers by taking $latex s = a$, and $latex t = b$. The nine numbers that remain are then</p>
-<table>
+<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
   <tr>
-    <td>$latex 1$</td>
-    <td>$latex 2^a$</td>
-    <td>$latex 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 1$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^b$</td>
   </tr>
   <tr>
-    <td>$latex 2^a$</td>
-    <td>$latex 2^{2a}$</td>
-    <td>$latex 2^a \cdot 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^{2a}$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a \cdot 3^b$</td>
   </tr>
   <tr>
-    <td>$latex 3^b$</td>
-    <td>$latex 2^a \cdot 3^b$</td>
-    <td>$latex 3^{2b}$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a \cdot 3^b$</td>
+    <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 3^{2b}$</td>
   </tr>
 </table>
 <p>and after removing the duplicates, we are left with just $latex 1, 2^{2a}$, and $latex 3^{2b}$. We have thus constructed a larger table where only three numbers remain, and can construct infinitely many more by applying the same procedure to the new table, and the result of doing so, and so on. To be more formal, we should use mathematical induction, and should describe the new sequence $latex x_1, x_2, \dots x_{3n}$ more explicitly. We also have to be careful, because one of the rows in the table where we multiplied the entries by $latex 2^a$ could be equal to one of the rows in the table where we multiplied the entries by $latex 3^b$. In other word, we may now have duplicate $latex x_i$'s in the combined table. This is not a problem, however, because we could simply exclude these rows entirely and not change the numbers that remain at the end of the procedure. Provided that we take care when writing up the solution, we have succeeded in solving the second part of the problem.</p>
