@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 2018 South African Mathematics Olympiad — Problem 6</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+        processEscapes: true
+      },
+      TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"]
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+  </script>
+  <link rel="stylesheet" href="../posts.css" />
+</head>
+<body>
+
+<header>
+<h1>The 2018 South African Mathematics Olympiad</h1>
+<h2>Problem 6</h2>
+<!-- <p>This post can be read on <a href="http://www.mathemafrica.org/?p=...">mathemafrica.org</a></p>  -->
+</header>
+
+<article>
+<!-- Delete up to here when copying to mathemafrica -->
+
+<p>The final round of the <a href="http://www.mathemafrica.org/?p=15190" target="_blank">South African Mathematics Olympiad</a> will be taking place on Thursday, 28 July 2019. I have been writing about some of the problems from the senior paper from 2018. A list of all of the problems can be found <a href="http://www.mathemafrica.org/?p=15215" target="_blank">here</a>.</p>
+
+<p>Today we will look at the sixth and final problem from the 2018 South African Mathematics Olympiad:</p>
+<blockquote>
+  <p>Let $latex n$ be a positive integer, and let $latex x_1, x_2, \dots, x_n$ be distinct positive integers with $latex x_1 = 1$. Construct an $latex n \times 3$ table where the entries of the $latex k$-th row are $latex x_k, 2x_k, 3x_k$ for $latex k = 1, 2, \dots, n$. Now follow a procedure where, in each step, two identical entries are removed from the table. This continues until there are no more identical entries in the table.</p>
+  <ol>
+    <li>Prove that at least three entries remain at the end of the procedure.</li>
+    <li>Prove that there are infinitely many possible choices for $latex n$ and $latex x_1, x_2, \dots, x_n$ such that only three entries remain,</li>
+  </ol>
+</blockquote>
+
+<p>There are some heuristics that are often helpful when solving a problem, such as</p>
+<ul>
+  <li><b>Looking at small cases:</b> This helps us to understand the problem and how the various pieces in the problem relate to each other. It also helps us to spot patterns that we could try to prove hold in general, or to find ways to build larger solutions from smaller ones.</li>
+  <li><b>Building up larger solutions from smaller ones <i>(recursion)</i></b> Sometimes, such as in this problem, we are asked to find multiple solutions to some problem, and so being able to build larger solutions from smaller ones would be invaluable. Sometimes we want to count in how many ways things can be done. If every solution to a problem can't be built from a smaller one, and we know how many solutions there are in the smallest case, this will allow us to establish a recurrence relation. Trying to build larger solutions from smaller ones also helps to give us more intuition for how the problem works.</li>
+  <li><a href="https://artofproblemsolving.com/wiki/index.php/Extreme_principle" target="_blank"><b>The Extremal Principle:</b></a> Often being the largest or smallest item in some set places additional constraints on that item that makes it easier to reason about, or limits how it is able to interact with other items in the set. More examples of using this principle can be found on <a href="https://brilliant.org/wiki/extremal-principle/" target="_blank">Brilliant.org</a>.</li>
+  <li><b>Review the solution:</b> Does the result make sense? Are there other ways to prove the same result? This doesn't help us that much in solving the current problem, but does give us confidence that our solution is correct, and may help us in solving similar problems in the future.
+</ul>
+
+<p>The first thing that we should notice about this problem is that the order that we perform the operations is largely irrelevant. a number will remain at the end if and only if it appears an odd number of times in the table. The only thing that the order of deletions can affect is the positions of the numbers at the end, but it can not affect how many of them there are.</p>
+
+<p>In this problem, by far the simplest case is when $latex n = 1$ and $latex x_1 = 1$. In this case, our table is simply</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this case, exactly three numbers remain. Perhaps if we can find larger examples where exactly three numbers remain, we can try to extract a pattern. It may be the case that the three numbers that remain are precisely the three that are forced to remain in all situations, and so will give us some insight into how we might go about the proof for the first part of the problem. It will also help us to see how to construct larger examples, which may help us with the second part of the problem.</p>
+
+<p>The build a larger example, we need to duplicate some of the numbers so that they will be crossed out. Since the number $latex 1$ can only appear in the first column, and since the $latex x_i$ must be distinct, we can not create a duplicate of the number $latex 1$, and so the number $latex 1$ will always remain.</p>
+
+<p>This is already a valuable piece of insight. We have already identified one of the three numbers that will always remain. Perhaps we can try to generalise what sorts of numbers will always remain. In this case, $latex 1$ happens to also be the smallest number in the table, and so this is an example of the extremal principle. The smallest number in the table must appear in the first column, and the $latex x_i$ are unique, the smallest number can only appear once. A similar argument shows that the largest number in the table must remain at the end because it can only appear in the third column. We could generalise this argument even further: <em>any</em> number which can only appear in one of the three columns must only appear in the table once.</p>
+
+<p>With this insight stored securely in our arsenal, let us continue trying to build larger examples where only three numbers remain. The next candidate for a number to duplicate is the number $latex2$. This already appears in the second column, and can not appear in the third column, and so let's make $latex x_2 = 2$ so that it appears in the first column. Now our table looks as follows:<p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+<p>where black cells indicate numbers which have been removed because they are duplicates.</p>
+
+<p>Duplicating the $latex 3$ will also get rid of the $latex 6$ which we have now created. We could try to remove other numbers, but in each of the other cases, we would remove one number but gain two. Setting $latex x_3$ gives us</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td>4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This gives us our second example of a table with exactly three numbers remaining. We note that the fact that there is one number remaining in each column lends support to our earlier idea that a number which can only appear in one of the columns must only appear once in the table. We should try to identify what property of the numbers $latex 1, 4$, and $latex 9$ ensure that they only appear in one column. We already know that $latex 1$ and $latex 9$ remain because they are the smallest and largest numbers, respectively, but what is special about $latex 4$? We carry on.</p>
+
+<p>If we duplicate the number $latex 4$, we obtain the table<p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td class="strike">4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td class="strike">4</td>
+      <td>8</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Working with the hypothesis that we only want one number to remain in each column, we should now try to remove the $latex 9$ or the $latex 12$. We also know that it is the largest number in the table that will remain in the third column, and since there are already numbers larger than $latex 9$ in the table, we should remove the $latex 9$. Placing $latex 9$ in the first column thus gives us</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td class="strike">4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td class="strike">9</td>
+    </tr>
+    <tr>
+      <td class="strike">4</td>
+      <td>8</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td class="strike">9</td>
+      <td>18</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The exact same argument now tells us that we should remove the $latex 12$. There are two ways in which this could be accomplished: we could place a $latex 6$ in the first column so that $latex 12$ appears in the second column, or we could place a $latex 12$ in the first column. I will save us from the trial and error that would ensue at this point by pointing out that a $latex 6$ placed in the first column could never be removed because then there is already a $latex 6$ in all three of the columns. We thus want to place a $latex 12$ in the first column. This gives us</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td class="strike">4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td class="strike">9</td>
+    </tr>
+    <tr>
+      <td class="strike">4</td>
+      <td>8</td>
+      <td class="strike">12</td>
+    </tr>
+    <tr>
+      <td class="strike">9</td>
+      <td>18</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td class="strike">12</td>
+      <td>24</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A similar argument to before tells us that we should remove the $latex 27$, which can only be done by adding a $latex 27$ in the first column.</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td class="strike">4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td class="strike">9</td>
+    </tr>
+    <tr>
+      <td class="strike">4</td>
+      <td>8</td>
+      <td class="strike">12</td>
+    </tr>
+    <tr>
+      <td class="strike">9</td>
+      <td>18</td>
+      <td class="strike">27</td>
+    </tr>
+    <tr>
+      <td class="strike">12</td>
+      <td>24</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td class="strike">27</td>
+      <td>54</td>
+      <td>81</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We could get rid of the $latex 18, 36$, and $latex 54$ in one fell swoop by placing a $latex 18$ in the first column. We then have to delete either the $latex 8$ or the $latex 24$ in the second column. Alternatively, we could delete both by placing a $latex 8$ in the first column. This turns out to be a better idea, because we then have...</p>
+<table>
+  <tr>
+    <th>$latex x_k$</th>
+    <th>$latex 2x_k$</th>
+    <th>$latex 3x_k$</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="strike">2</td>
+      <td class="strike">3</td>
+    </tr>
+    <tr>
+      <td class="strike">2</td>
+      <td class="strike">4</td>
+      <td class="strike">6</td>
+    </tr>
+    <tr>
+      <td class="strike">3</td>
+      <td class="strike">6</td>
+      <td class="strike">9</td>
+    </tr>
+    <tr>
+      <td class="strike">4</td>
+      <td class="strike">8</td>
+      <td class="strike">12</td>
+    </tr>
+    <tr>
+      <td class="strike">9</td>
+      <td class="strike">18</td>
+      <td class="strike">27</td>
+    </tr>
+    <tr>
+      <td class="strike">12</td>
+      <td class="strike">24</td>
+      <td class="strike">36</td>
+    </tr>
+    <tr>
+      <td class="strike">27</td>
+      <td class="strike">54</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td class="strike">18</td>
+      <td class="strike">36</td>
+      <td class="strike">54</td>
+    </tr>
+    <tr>
+      <td class="strike">8</td>
+      <td>16</td>
+      <td class="strike">24</td>
+    </tr>
+  </tbody>
+</table>
+<p>...our third example of a table with only three numbers remaining!</p<
+
+<p>We can't really claim that this is evidence that there will always be one number remaining in each column, because we explicitly constructed the table with the goal of having one number remain in each column. Thus at best it is evidence that examples of such tables exist, and may help us in constructing larger examples in order to solve the second part of the problems. Let us disabuse ourselves of the notion that we are logical beings, however, and pretend that this table is, <i>in fact</i>, representative. What insights could we gain?</p>
+
+<p>We already know that the smallest and largest number will always remain in the table because these can only possibly appear in the first and third column, respectively, so our goal is now to figure out what is special about the numbers that remain in the second column. These numbers were $latex 2, 4$, and $latex 16$. One thing that these have in common is that they are all powers of $latex 2$. It is not, however, the case that powers of $latex 2$ can only appear in the second column, because they could also appear in the first column. What, then, is special about the powers of $latex 2$ that appear in the second column? Either by inspired by the fact that when other numbers remained in the table, it had something to do with their size, or through trial and error by looking at what happens when powers of $latex 2$ appear in the first column, we come to the realisation that it is the <em>largest</em> power of $latex 2$ which can only appear in the second column, since if a power of $latex 2$ appears in the first column, then a larger one appears in the second column in the same row!</p>
+
+<p>We have thus succeeded in identifying the three numbers which always remain: $latex 1$, the largest power of $latex 2$, and the largest number in the table. In fact, in the cases where exactly three numbers remain, the largest number in the table happens to also be the largest power of $latex 3$ in the table, and so an equally valid description of the numbers that always remain would be $latex 1$, the largest power of $latex 2$, and the largest power of $latex 3$.</p>
+
+<p>When we write a solution to the problem, we do not need to include all of the work that we did above. We could simply say that we will prove that $latex 1$, the largest power of $latex 2$, and the largest power of $latex 3$ will always remain, and then do so by proving that each of these numbers can only appear in one of the three columns and hence can not be duplicated because to do so would require two of the $latex x_i$ to be the same. This is how most mathematics is written: we are given the final result without being shown how the author came up with the ideas in the solution. When reading mathematics, it is helpful to try to figure out why certain steps were taken, or what led the author to believe that they may work.</p>
+
+<p>There are of course other ways in which we could come to the realisation that $latex 1$, the largest power of $latex 2$, and the largest power of $latex 3$ always remain. In our experimentation, we could have noticed, for example, that whenever we try to get rid of a power of $latex 2$, we just get a larger one in its place. It is thus impossible to eliminate all of the powers of $latex 2$ in the table, and so there will always be at least one which remains. We are more likely to notice this, however, if we already have the intuition that powers of $latex 2$ are important! When writing the solution, we don't have to show that it is the largest of power of $latex 2$ that always remains. We could make the above argument more formal and use it to show that there will always be at least one power of $latex 2$!</p>
+
+<p>It is certainly interesting to try to think about other ways in which we could solve the problem or in which we could have come to realise which numbers always remain, but we still haven't solved the second part of the problem. So far, we have used mainly trial and error to try to construct larger tables. We need a more systematic approach.</p>
+
+<p>The key insight for creating larger numbers from smaller ones turns out to be the following: If we multiply each of the $latex x_i$ by some constant $latex c$, then this has the effect of multiplying every entry in the table by the same constant $latex c$.  If two numbers in the table before were equal, then the numbers now in the same position would still be equal, and could still be deleted. Thus the same sequence of deletions would occur. We see that if the numbers that originally remained in the table were $latex y_1, y_2, \dots, y_m$, then the numbers that remain in the new table are $latex cy_1, cy_2, \dots, cy_m$.</p>
+
+<p>This insight is clearly useful, and we will use it to construct larger tables, but it may be very difficult to come up with it ourselves. A certain amount of luck, and previous experience with sufficiently similar problems is necessary.</p>
+
+<p>Suppose that we have a sequence $latex x_1, x_2, \dots, x_n$ such that the numbers $latex 2^a$, and $latex 3^b$ remain in the table at the end of our procedure. How could we create a table where a larger power of $latex 2$ remains at the end? We could just take the current table and add a row starting with $latex 2^a$. To get a larger power of $latex 3$, we could add a row starting with $latex 3^b$. We could then try to add more rows to this table to try to get rid of the numbers that we don't want. In doing so, we may realise that the sequence of deletions that we perform are very similar to the ones we performed when constructing our starting table in the first place, or we might not. We could try to find a solution this way, but the problem becomes much easier if we instead embrace our previous insight right from the onset.</p>
+
+<p>If we were to multiply each of the $latex x_i$ by $latex 2^s$, for some $latex s$, then we know that we would obtain a table where the numbers that remain are $latex 2^s, 2^{a + s}$, and $latex 2^s \cdot 3^b$. Similarly, if we were to multiply each of the entries by $latex 3^t$ instead, then we would obtain a table where the entries that remain are $latex 3^t, 2^a \cdot 3^t$, and $latex 3^{b + t}$. Thus if we combine all three of the tables, we have one large table, three times the size of the original, where there is some sequence of operations that can be performed such that nine numbers remain:</p>
+<table>
+  <tr>
+    <td>$latex 1$</td>
+    <td>$latex 2^a$</td>
+    <td>$latex 3^b$</td>
+  </tr>
+  <tr>
+    <td>$latex 2^s$</td>
+    <td>$latex 2^{a + s}$</td>
+    <td>$latex 2^s \cdot 3^b$</td>
+  </tr>
+  <tr>
+    <td>$latex 3^t$</td>
+    <td>$latex 2^a \cdot 3^t$</td>
+    <td>$latex 3^{b + t}$</td>
+  </tr>
+</table>
+
+<p>We would like for only three numbers to remain, so perhaps we can choose $latex s$ and $latex t$ such that some of these numbers are equal, and hence can be deleted. We note that the only number which can be equal to $latex 2^s \cdot 3^b$ is $latex 2^a \cdot 3^t$. Thus we could at least remove these two numbers by taking $latex s = a$, and $latex t = b$. The nine numbers that remain are then</p>
+<table>
+  <tr>
+    <td>$latex 1$</td>
+    <td>$latex 2^a$</td>
+    <td>$latex 3^b$</td>
+  </tr>
+  <tr>
+    <td>$latex 2^a$</td>
+    <td>$latex 2^{2a}$</td>
+    <td>$latex 2^a \cdot 3^b$</td>
+  </tr>
+  <tr>
+    <td>$latex 3^b$</td>
+    <td>$latex 2^a \cdot 3^b$</td>
+    <td>$latex 3^{2b}$</td>
+  </tr>
+</table>
+<p>and after removing the duplicates, we are left with just $latex 1, 2^{2a}$, and $latex 3^{2b}$. We have thus constructed a larger table where only three numbers remain, and can construct infinitely many more by applying the same procedure to the new table, and the result of doing so, and so on. To be more formal, we should use mathematical induction, and should describe the new sequence $latex x_1, x_2, \dots x_{3n}$ more explicitly, but we have succeeded in solving the second part of the problem.</p>
+
+<p>As a follow up, which is left as an exercise to the reader, we may wonder whether the tables that we constructed above are the only possible ones where precisely three numbers remain. i.e. We could ask ourselves to find <em>all</em> values of $latex n, x_1, x_2, \dots, x_n$ such that only three numbers remain instead of "merely" finding infinitely many. I have not worked through this version of the problem, and so I do not know the answer, but I suspect that the answer is "yes", and would be delighted to either see a proof, or to learn otherwise.</p>
+
+<!-- Delete from here onwards when copying to mathemafrica -->
+</article>
+
+<footer>
+<nav>
+  Return to <a href="../index.html">list of blog posts</a>
+</nav>
+</footer>
+
+</body>
+</html>
