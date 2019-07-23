@@ -20,3 +20,21 @@ footer {
 	padding: 1% 2%;
 }
 
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+th, td {
+  padding: 5px;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+}
+
+td.strike {
+  background-color: black;
+  color: white;
+}
