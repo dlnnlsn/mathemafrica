@@ -59,7 +59,7 @@
 <p>The first thing that we should notice about this problem is that the order in which we perform the operations is largely irrelevant. A number will remain at the end if and only if it appears an odd number of times in the table. The only thing that the order of deletions can affect is the positions of the numbers at the end, but it can not affect how many of them there are.</p>
 
 <p>In this problem, by far the simplest case is when $latex n = 1$ and $latex x_1 = 1$. In this case, our table is simply</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -82,7 +82,7 @@
 <p>This is already a valuable piece of insight. We have already identified one of the three numbers that will always remain. Perhaps we can try to generalise what sorts of numbers will always remain. In this case, $latex 1$ happens to also be the smallest number in the table, and so this is an example of the extremal principle. The smallest number in the table must appear in the first column, and since the $latex x_i$ are unique, the smallest number can only appear once. A similar argument shows that the largest number in the table must remain at the end because it can only appear in the third column. We could generalise this argument even further: <em>any</em> number which can only appear in one of the three columns must only appear in the table only once.</p>
 
 <p>With this insight stored securely in our arsenal, let us continue trying to build larger examples where only three numbers remain. The next candidate for a number to duplicate is the number $latex2$. This already appears in the second column, and can not appear in the third column, and so let's make $latex x_2 = 2$ so that it appears in the first column. Now our table looks as follows:<p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -104,7 +104,7 @@
 <p>where black cells indicate numbers which have been removed because they are duplicates.</p>
 
 <p>Duplicating the $latex 3$ will also get rid of the $latex 6$ which we have now created. We could try to remove other numbers, but in each of the other cases, we would remove one number but gain two. Setting $latex x_3 = 3$ gives us</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -132,7 +132,7 @@
 <p>This gives us our second example of a table with exactly three numbers remaining. We note that the fact that there is one number remaining in each column lends support to our earlier idea that a number which can only appear in one of the columns must only appear once in the table. We should try to identify what property of the numbers $latex 1, 4$, and $latex 9$ ensure that they only appear in one column. We already know that $latex 1$ and $latex 9$ remain because they are the smallest and largest numbers, respectively, but what is special about $latex 4$? We carry on.</p>
 
 <p>If we duplicate the number $latex 4$, we obtain the table<p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -163,7 +163,7 @@
 </table>
 
 <p>Working with the hypothesis that we only want one number to remain in each column, we should now try to remove the $latex 9$ or the $latex 12$. We also know that it is the largest number in the table that will remain in the third column, and since there are already numbers larger than $latex 9$ in the table, we should remove the $latex 9$. Placing $latex 9$ in the first column thus gives us</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -199,7 +199,7 @@
 </table>
 
 <p>The exact same argument now tells us that we should remove the $latex 12$. There are two ways in which this could be accomplished: we could place a $latex 6$ in the first column so that $latex 12$ appears in the second column, or we could place a $latex 12$ in the first column. I will save us from the trial and error that would ensue at this point by pointing out that a $latex 6$ placed in the first column could never be removed because then there is already a $latex 6$ in all three of the columns. We thus want to place a $latex 12$ in the first column. This gives us</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -240,7 +240,7 @@
 </table>
 
 <p>A similar argument to before tells us that we should remove the $latex 27$, which can only be done by adding a $latex 27$ in the first column.</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -286,7 +286,7 @@
 </table>
 
 <p>We could get rid of the $latex 18, 36$, and $latex 54$ in one fell swoop by placing a $latex 18$ in the first column. We then have to delete either the $latex 8$ or the $latex 24$ in the second column. Alternatively, we could delete both by placing a $latex 8$ in the first column. This turns out to be a better idea, because we then have...</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex x_k$</th>
     <th style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2x_k$</th>
@@ -361,7 +361,7 @@
 <p>Suppose that we have a sequence $latex x_1, x_2, \dots, x_n$ such that the numbers $latex 2^a$, and $latex 3^b$ remain in the table at the end of our procedure. How could we create a table where a larger power of $latex 2$ remains at the end? We could just take the current table and add a row starting with $latex 2^a$. To get a larger power of $latex 3$, we could add a row starting with $latex 3^b$. We could then try to add more rows to this table to try to get rid of the numbers that we don't want. In doing so, we may realise that the sequence of deletions that we perform are very similar to the ones we performed when constructing our starting table in the first place, or we might not. We could try to find a solution this way, but the problem becomes much easier if we instead embrace our previous insight right from the onset.</p>
 
 <p>If we were to multiply each of the $latex x_i$ by $latex 2^s$, for some $latex s$, then we know that we would obtain a table where the numbers that remain are $latex 2^s, 2^{a + s}$, and $latex 2^s \cdot 3^b$. Similarly, if we were to multiply each of the entries by $latex 3^t$ instead, then we would obtain a table where the entries that remain are $latex 3^t, 2^a \cdot 3^t$, and $latex 3^{b + t}$. Thus if we combine all three of the tables, we have one large table, three times the size of the original, where there is some sequence of operations that can be performed such that nine numbers remain:</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 1$</td>
     <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a$</td>
@@ -380,7 +380,7 @@
 </table>
 
 <p>We would like for only three numbers to remain, so perhaps we can choose $latex s$ and $latex t$ such that some of these numbers are equal, and hence can be deleted. We note that the only number which can be equal to $latex 2^s \cdot 3^b$ is $latex 2^a \cdot 3^t$. Thus we could at least remove these two numbers by taking $latex s = a$, and $latex t = b$. The nine numbers that remain are then</p>
-<table style="width: 80%; margin: auto; border: 1px solid black; text-align: center">
+<table style="width: 80%; margin: 0 auto 15px auto; border: 1px solid black; text-align: center">
   <tr>
     <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 1$</td>
     <td style="border: 1px solid black; text-align: center; padding: 5px;">$latex 2^a$</td>
