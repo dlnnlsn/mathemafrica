@@ -30,7 +30,7 @@
 <!-- <p>This post can be read on <a href="http://www.mathemafrica.org/?p=...">mathemafrica.org</a></p> -->
 </header>
 
-<article>
+<p>
 <!-- Delete up to here when copying to mathemafrica -->
 
 <h3>Bézout's Lemma</h3>
@@ -38,11 +38,11 @@
 <h4>Statement of Bézout's Lemma</h4>
 <p>Bézout's Lemma is a result in elementary number theory that is often used as a key ingredient in the proof of the Fundamental Theorem of Arithmetic.</p>
 <p>Bézout's Lemma tells us that if $latex m$ and $latex n$ are any integers, then there are integers $latex s$ and $latex t$ such that</p>
-<p style="text-align: center;">$latex ms + nt = \gcd(m, n)$,</p>
+<p style="text-align: center;">$latex \displaystyle ms + nt = \gcd(m, n)$,</p>
 <p>where $latex \gcd(m, n)$ is the greatest common divisor of $latex m$ and $latex n$.</p>
 
 <p>In particular, we then know that if $latex m$ and $latex n$ are <em>relatively prime</em> (which is to say that they have no factors in common other than $latex \pm 1$), then there are integers $latex s$ and $latex t$ such that</p>
-<p style="text-align: center;">$latex ms + nt = 1.$</p>
+<p style="text-align: center;">$latex \displaystyle ms + nt = 1.$</p>
 <p>The value in knowing this is that it allows us to prove <em>Euclid's Lemma</em>.</p>
 
 <h4>Euclid's Lemma</h4>
@@ -51,12 +51,28 @@
   <p>Suppose that $latex a$, $latex b$, and $latex c$ are integers such that $latex a \mid bc$. If $latex \gcd(a, b) = 1$, then $latex a \mid c$.</p>
 </blockquote>
 <p>Indeed, if $latex \gcd(a, b) = 1$, then Bézout's Lemma tells us that there are integers $latex s$ and $latex t$ such that</p>
-<p style="text-align: center;">$latex sa + tb = 1$.</p>
+<p style="text-align: center;">$latex \displaystyle sa + tb = 1$.</p>
 <p>Multiplying by $latex c$ gives us that</p>
-<p style="text-align: center;">$latex sac + tbc = c$.</p>
+<p style="text-align: center;">$latex \displaystyle sac + tbc = c$.</p>
 <p>We know that $latex a \mid sac$, and by assumption we have that $latex a \mid tbc$ since $latex a \mid bc$. It follows that $latex a$ also divides the sum of these two numbers; in other words we have that $latex a \mid c$.</p>
 
 <h4>The Fundamental Theorem of Arithmetic</h4>
+
+<p>Euclid's Lemma provides a means to prove the uniqueness of the prime factorisation of a number. Consider a prime $latex p$, and suppose that $latex p \mid ab$ for some integers $latex a$ and $latex b$. Then either $latex p$ divides $latex a$, or $latex p$ and $latex a$ have no factors in common at all! (Other than $latex \pm 1$.) This is because the only factors that they could possibly have <em>in common</em> are the factors of $latex p$, which&mdash;since $latex p$ is a prime&mdash;are $latex 1$ and $latex p$. There are thus two possibilities: either $latex p \mid a$, or $latex \gcd(p, a) = 1$, in which case Euclid's Lemma tells us that $latex p \mid b$. A proof using the principle of mathematical induction allows us to extend this to the following result:</p>
+<blockquote>
+  <p>Suppose that $latex p$ is a prime, and</p>
+  <p style="text-align: center;">$latex \displaystyle p \mid a_1 a_2 a_3 \cdots a_k$</p>
+  <p>for some integers $latex a_1, a_2, \dots, a_n$. Then $latex p \mid a_i$ for some $latex i \in \{1, 2, \dots, k\}$.</p>
+</blockquote>
+<p>To see how this applies to the Fundamental Theorem of Arithmetic, suppose that</p>
+<p style="text-align: center;">$latex \displaystyle n = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$</p>
+<p>and</p>
+<p style="text-align: center;">$latex \displaystyle n = q_1^{b_1} q_2^{b_2} \cdots q_m^{b_m}$</p>
+<p>are two <em>different</em> prime factorisations of the number $latex n$. Since</p>
+<p style="text-align: center;">$latex \displaystyle p_1 \mid q_1^{b_1} q_2^{b_2} \cdots q_m^{b_m}$,</p>
+<p>we know that $latex p_1 \mid q_i$ for some $latex i$, and since $latex q_i$ is prime and $latex p_1 \neq 1$, this implies that $latex p_1 = q_i$. This then implies that the number</p>
+<p style="text-align: center;">$latex \displaystyle \frac{n}{p_1} = \frac{n}{q_i} = p_1^{a_1 - 1} p_2^{a_2} \cdots p_k^{a_k} = q_1^{b_1} \cdots q_{i - 1}^{b_{i - 1}} q_i^{b_i - 1} q_{i + 1}^{b_{i + 1}} \cdots q_m^{b_m}$</p>
+<p>also has two different prime factorisations. We can imagine applying this procedure to all of the primes $latex p_i$ and eventually we would come to the conclusion that the number $latex 1$ has two different prime factorisations, which is absurd. Alternatively, the proof could be presented as a proof using the (strong) principle of mathematical induction: since $latex \frac{n}{p_1} &lt; n$, we can apply the inductive hypothesis to conclude that $latex \frac{n}{p_1}$ in fact has a unique prime factorisation, which then implies that the two factorisations of $latex n$ aren't distinct after all.</p>
 
 <!-- Delete from here onwards when copying to mathemafrica -->
 </article>
