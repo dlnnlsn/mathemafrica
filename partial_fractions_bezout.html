@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partial Fractions and Bézout's Lemma</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex','$'] ], //Use the delimiters used by the latex plugin on mathemafrica
+        processEscapes: true
+      },
+      TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"]
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js">
+  </script>
+  <link rel="stylesheet" href="./posts.css" />
+</head>
+<body>
+
+<header>
+<h1>Partial Fractions and Bézout's Lemma</h1>
+<!-- <p>This post can be read on <a href="http://www.mathemafrica.org/?p=...">mathemafrica.org</a></p> -->
+</header>
+
+<article>
+<!-- Delete up to here when copying to mathemafrica -->
+
+<h3>Bézout's Lemma</h3>
+
+<h4>Statement of Bézout's Lemma</h4>
+<p>Bézout's Lemma is a result in elementary number theory that is often used as a key ingredient in the proof of the Fundamental Theorem of Arithmetic.</p>
+<p>Bézout's Lemma tells us that if $latex m$ and $latex n$ are any integers, then there are integers $latex s$ and $latex t$ such that</p>
+<p style="text-align: center;">$latex ms + nt = \gcd(m, n)$,</p>
+<p>where $latex \gcd(m, n)$ is the greatest common divisor of $latex m$ and $latex n$.</p>
+
+<p>In particular, we then know that if $latex m$ and $latex n$ are <em>relatively prime</em> (which is to say that they have no factors in common other than $latex \pm 1$), then there are integers $latex s$ and $latex t$ such that</p>
+<p style="text-align: center;">$latex ms + nt = 1.$</p>
+<p>The value in knowing this is that it allows us to prove <em>Euclid's Lemma</em>.</p>
+
+<h4>Euclid's Lemma</h4>
+<blockquote>
+  <h5>Euclid's Lemma</h5>
+  <p>Suppose that $latex a$, $latex b$, and $latex c$ are integers such that $latex a \mid bc$. If $latex \gcd(a, b) = 1$, then $latex a \mid c$.</p>
+</blockquote>
+<p>Indeed, if $latex \gcd(a, b) = 1$, then Bézout's Lemma tells us that there are integers $latex s$ and $latex t$ such that</p>
+<p style="text-align: center;">$latex sa + tb = 1$.</p>
+<p>Multiplying by $latex c$ gives us that</p>
+<p style="text-align: center;">$latex sac + tbc = c$.</p>
+<p>We know that $latex a \mid sac$, and by assumption we have that $latex a \mid tbc$ since $latex a \mid bc$. It follows that $latex a$ also divides the sum of these two numbers; in other words we have that $latex a \mid c$.</p>
+
+<h4>The Fundamental Theorem of Arithmetic</h4>
+
+<p>Display-style mathematical equations can be achieved on mathemafrica as in the following example:</p>
+<p style="text-align: center;">$latex \displaystyle \int_{-\infty}^{\infty} e^{-x^2} \text{d} x = \sqrt{\pi}$</p>
+
+<!-- Delete from here onwards when copying to mathemafrica -->
+</article>
+
+<footer>
+<nav>
+  Return to <a href="../index.html">list of blog posts</a>
+</nav>
+</footer>
+
+</body>
+</html>
