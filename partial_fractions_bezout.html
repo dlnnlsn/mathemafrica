@@ -110,6 +110,20 @@ When learning to integrate rational functions, students are introduced to the me
 <p style="text-align: center;">$latex \displaystyle P(x) C(x) + Q(x) B(x) = 1$.</p>
 <p>Perhaps this section wasn't about something completely different after all: this is nothing other than a polynomial version of Bézout's Lemma!</p>
 
+<h3>A word about the degrees of the polynomials</h3>
+
+<p>We have thus far ignored the degrees of the polynomials involved. Our claim that it is sufficient to consider the case when $latex A(x) = 1$ does not take into account that when $latex A(x) \neq 1$, it is possible, and in fact not unlikely, that the degree of $latex A(x) P(x)$ is larger than the degree of $latex B(x)$. Let us address this now.</p>
+<p>Suppose that $latex \operatorname{deg} A &lt; \operatorname{deg} B + \operatorname{deg} C$, and we have found polynomials $latex P$ and $latex Q$ such that</p>
+<p style="text-align: center;">$latex \displaystyle A(x) = P(x) C(x) + Q(x) B(x)$.</p>
+<p>We will show that we can replace $latex P$ with a polynomial of smaller degree than $latex B$, and $latex Q$ with a polynomial of smaller degree than $latex B$. Using the <em>division algorithm</em>, we know that $latex P(x) = S(x) B(x) + P^\prime (x)$ for some polynomial $latex S(x)$, and some polynomial $latex P^\prime (x)$ with the property that either $latex P^\prime (x) = 0$, or $latex \operatorname{deg} P^\prime &lt; \operatorname{deg} B$.</p>
+<p>Let $latex Q^\prime = Q + SC$. Then we have that</p>
+<p style="text-align: center;">$latex \displaystyle P^\prime C + Q^\prime B = (P - SB) C + (Q + SC) B = PC + QB - SBC + SCB = PC + QB = A$.</p>
+<p>It is thus sufficient to show that $latex \operatorname{deg} Q^\prime &lt; \operatorname{deg} C$. But we know that</p>
+<p style="text-align: center;">$latex \displaystyle \operatorname{deg} P^\prime C = \operatorname{deg} P^\prime + \operatorname{deg} C &lt; \operatorname{deg} B + \operatorname{deg} C$,</p>
+<p>and by assumption we have that $latex \operatorname{deg} A &lt; \operatorname{deg} B + \operatorname{deg} C$, from which it follows that</p>
+<p style="text-align: center;">$latex \displaystyle \operatorname{deg} Q^\prime + \operatorname{deg} B = \operatorname{deg} Q^\prime B = \operatorname{deg}(A - P^\prime C) \leq \max\{\operatorname{deg} A, \operatorname{deg} P^\prime C\} < \operatorname{deg} B + \operatorname{deg} C$,</p>
+<p>and so $latex \operatorname{deg} Q^\prime &lt; \operatorname{deg} C$.</p>
+
 <!-- Delete from here onwards when copying to mathemafrica -->
 </article>
 
