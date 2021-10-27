@@ -30,15 +30,13 @@
 <!-- <p>This post can be read on <a href="http://www.mathemafrica.org/?p=...">mathemafrica.org</a></p> -->
 </header>
 
-<p>
+<article>
 <!-- Delete up to here when copying to mathemafrica -->
 
 <h3>Bézout's Lemma</h3>
-
-<h4>Statement of Bézout's Lemma</h4>
 <p>Bézout's Lemma is a result in elementary number theory that is often used as a key ingredient in the proof of the Fundamental Theorem of Arithmetic. You may be surprised to learn that you learned a version of this result in first year calculus, though it was almost certainly not called Bézout's Lemma in the course.</p>
 <blockquote>
-  <h5>Bezout's Lemma</h5>
+  <h4>Bezout's Lemma</h4>
   <p>If $latex m$ and $latex n$ are any integers, then there are integers $latex s$ and $latex t$ such that</p>
   <p style="text-align: center;">$latex \displaystyle ms + nt = \gcd(m, n)$,</p>
   <p>where $latex \gcd(m, n)$ is the greatest common divisor of $latex m$ and $latex n$.</p>
@@ -48,9 +46,9 @@
 <p style="text-align: center;">$latex \displaystyle ms + nt = 1.$</p>
 <p>The value in knowing this is that it allows us to prove <em>Euclid's Lemma</em>.</p>
 
-<h4>Euclid's Lemma</h4>
+<h3>Euclid's Lemma</h3>
 <blockquote>
-  <h5>Euclid's Lemma</h5>
+  <h4>Euclid's Lemma</h4>
   <p>Suppose that $latex a$, $latex b$, and $latex c$ are integers such that $latex a \mid bc$. If $latex \gcd(a, b) = 1$, then $latex a \mid c$.</p>
 </blockquote>
 <p>Indeed, if $latex \gcd(a, b) = 1$, then Bézout's Lemma tells us that there are integers $latex s$ and $latex t$ such that</p>
@@ -59,7 +57,7 @@
 <p style="text-align: center;">$latex \displaystyle sac + tbc = c$.</p>
 <p>We know that $latex a \mid sac$, and by assumption we have that $latex a \mid tbc$ since $latex a \mid bc$. It follows that $latex a$ also divides the sum of these two numbers; in other words we have that $latex a \mid c$.</p>
 
-<h4>The Fundamental Theorem of Arithmetic</h4>
+<h3>The Fundamental Theorem of Arithmetic</h3>
 
 <p>Euclid's Lemma provides a means to prove the uniqueness of the prime factorisation of a number. Consider a prime $latex p$, and suppose that $latex p \mid ab$ for some integers $latex a$ and $latex b$. Then either $latex p$ divides $latex a$, or $latex p$ and $latex a$ have no factors in common at all! (Other than $latex \pm 1$.) This is because the only factors that they could possibly have <em>in common</em> are the factors of $latex p$, which&mdash;since $latex p$ is a prime&mdash;are $latex 1$ and $latex p$. There are thus two possibilities: either $latex p \mid a$, or $latex \gcd(p, a) = 1$, in which case Euclid's Lemma tells us that $latex p \mid b$. A proof using the principle of mathematical induction allows us to extend this to the following result:</p>
 <blockquote>
@@ -77,7 +75,7 @@
 <p style="text-align: center;">$latex \displaystyle \frac{n}{p_1} = \frac{n}{q_i} = p_1^{a_1 - 1} p_2^{a_2} \cdots p_k^{a_k} = q_1^{b_1} \cdots q_{i - 1}^{b_{i - 1}} q_i^{b_i - 1} q_{i + 1}^{b_{i + 1}} \cdots q_m^{b_m}$</p>
 <p>also has two different prime factorisations. We can imagine applying this procedure to all of the primes $latex p_i$ and eventually we would come to the conclusion that the number $latex 1$ has two different prime factorisations, which is absurd. Alternatively, the proof could be presented as a proof using the (strong) principle of mathematical induction: since $latex \frac{n}{p_1} &lt; n$, we can apply the inductive hypothesis to conclude that $latex \frac{n}{p_1}$ in fact has a unique prime factorisation, which then implies that the two factorisations of $latex n$ aren't distinct after all.</p>
 
-<h4>The Proof of Bézout's Lemma</h4>
+<h3>The Proof of Bézout's Lemma</h3>
 
 <p>A standard proof of Bézout's Lemma considers the set of all positive integers of the form $latex ms + nt$ for some integers $latex s$ and $latex t$. One can show that the smallest element of this set divides both $latex m$ and $latex n$. I prefer to think of Bézout's Lemma as a consequence of Euclid's Algorithm.</p>
 <p>Euclid's Algorithm is a method to calculate the greatest common divisor of two numbers $latex m$ and $latex n$. On each step of the algorithm, we consider two numbers $latex a_k$ and $latex b_k$. Initially these two numbers are $latex m$ and $latex n$ themselves. We then replace the larger of the two numbers with the difference of the two numbers. In other words, if $latex a_k > b_k$, then we set $latex a_{k + 1} = a_k - b_k$, and $latex b_{k + 1} = b_k$. We do a similar substitution if $latex b_k > a_k$.</p>
@@ -88,7 +86,7 @@
 <p>In other words, we initially have that there are integers $latex s_0, t_0, u_0$, and $latex v_0$ such that $latex a_0 = s_0 m + t_0 n$, and $latex b_0 = u_0 m + v_0 n$. In fact, we can take $latex s_0 = v_0 = 1$ and $latex t_0 = u_0 = 0$. Now suppose that we know that $latex a_k = s_k m + t_k n$ and $latex b_k = u_k m + v_k n$. Then if $latex a_k > b_k$, we have that $latex a_{k + 1} = s_{k + 1} m + t_{k + 1} n$ and $latex b_{k + 1} = u_{k + 1} m + v_{k + 1} n$ where $latex s_{k + 1} = s_k - u_k$, $latex t_{k + 1} = t_k - v_k$, $latex u_{k + 1} = u_k$ and $latex v_{k + 1} = v_k$. A similar proof works when $latex b_k > a_k$.</p>
 <p>But we also know that on some step of the algorithm, the larger of the two numbers is $latex \gcd(m, n)$!</p>
 
-<h4>And now for something completely different</h4>
+<h3>And now for something completely different</h3>
 
 When learning to integrate rational functions, students are introduced to the method of <em>partial fractions</em>. This method guarantees us that if $latex A(x)$ and $latex B(x)$ are polynomials, and $latex B(x)$ cam be factorised as
 <p style="text-align: center;">$latex \displaystyle B(x) = B_1(x)^{a_1} B_2(x)^{a_2} \cdots B_k(x)^{a_k}$,</p>
@@ -98,7 +96,7 @@ When learning to integrate rational functions, students are introduced to the me
 
 <p>How would we go about proving such a result? As is often the case, the general result presented above can be proven using the principle of mathematical induction once we have established the $latex k = 2$ case. The $latex k = 2$ case allows us to split off the irreducible factors of $latex B$ one at a time. The key to the proof is thus establishing the following result:</p>
 <blockquote>
-  <h5>Partial Fractions</h5>
+  <h4>Partial Fractions</h4>
   <p>Suppose that $latex A(x)$, $latex B(x)$, and $latex C(x)$ are polynomials such that $latex B(x)$ and $latex C(x)$ have no common factors of positive degree. Then there are polynomials $latex P(x)$ and $latex Q(x)$ such that</p>
   <p style="text-align: center;">$latex \displaystyle \frac{A(x)}{B(x) C(x)} = \frac{P(x)}{B(x)} + \frac{Q(x)}{C(x)}$.</p>
 </blockquote>
